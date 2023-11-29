@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { NavItem } from "./nav-item";
@@ -9,17 +11,18 @@ const NAV_ITEMS = [
 
 export const Header = () => {
   return (
-    <header>
-      <div>
+    <header className="absolute top-0 w-full z-10 h-24 flex items-center justify-center">
+      <div className=" container flex items-center justify-between">
         <Link href="/">
           <Image
             width={58}
             height={49}
-            src="/images/home.svg"
+            src="/images/logan.png"
             alt="Logo Lucas Camargo Dev"
+            className="cursor-pointer"
           />
         </Link>
-        <nav>
+        <nav className="flex items-center gap-2 sm:gap-4 md:gap-10">
           {NAV_ITEMS.map((item) => (
             <NavItem {...item} key={item.label} />
           ))}
