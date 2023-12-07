@@ -1,6 +1,8 @@
 import Link from "next/link";
-import { cn } from "@/app/lib/utils";
+
 import { usePathname } from "next/navigation";
+
+import { cn } from "@/utils/utils";
 
 type NavItemPropsType = {
   label: string;

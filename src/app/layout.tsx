@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Poppins, IBM_Plex_Mono } from "next/font/google";
 import { ReactNode } from "react";
-import { Header } from "./components/header";
+import { Header } from "@/components/header";
 
 const poppins = Poppins({
   variable: "--font-poppins",
