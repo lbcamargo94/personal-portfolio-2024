@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { NavItem } from "./nav-item";
-import ThemeSwitch from "../theme_switch";
+import { ThemeToogle } from "../themeToggle";
 
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
@@ -30,7 +30,7 @@ export const Header = () => {
         </nav>
       </div>
       <div>
-        <ThemeSwitch />
+        <ThemeToogle />
       </div>
     </header>
   );

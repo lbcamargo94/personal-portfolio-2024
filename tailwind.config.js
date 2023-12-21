@@ -7,7 +7,7 @@ export const content = [
   "node_modules/preline/dist/*.js",
 ];
 
-export const darkMode = "media";
+export const darkMode = "class";
 
 export const theme = {
   fontFamily: {

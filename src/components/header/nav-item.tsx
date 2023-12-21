@@ -1,7 +1,5 @@
 import Link from "next/link";
-
 import { usePathname } from "next/navigation";
-
 import { cn } from "@/utils/utils";
 
 type NavItemPropsType = {
