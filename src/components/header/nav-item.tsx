@@ -1,13 +1,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/utils/utils";
+import { INavItem } from "@/interface/INavItem";
 
-type NavItemPropsType = {
-  label: string;
-  href: string;
-};
-
-export const NavItem = ({ href, label }: NavItemPropsType) => {
+export const NavItem = ({ href, label }: INavItem) => {
   const pathname = usePathname();
 
   const isActive = pathname === href;

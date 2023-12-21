@@ -1,34 +1,22 @@
 import { useCallback, useContext, useState } from "react";
-import { ThemeContext } from "@/context";
-
-const getInitialTheme = () => {
-  if (typeof window !== "undefined" && window.localStorage) {
-    const storedPrefs = window.localStorage.getItem("color-theme");
-    if (typeof storedPrefs === "string") {
-      return "dark";
-    }
-  }
-
-  const userMedia = window.matchMedia("prefers-color-schema: dark");
-  if (userMedia.matches) {
-    return "dark";
-  }
-
-  return;
-};
+import { MainContext } from "@/context";
+import { IMainContext } from "@/interface/IContext";
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState({});
+  const [theme, setTheme] = useState("dark");
 
-  const handleThemeChange = useCallback((theme: string) => {
-    setTheme(theme);
-  }, []);
+  const handleThemeChange = useCallback(
+    (theme: string) => {
+      setTheme(theme);
+    },
+    [setTheme],
+  );
 
   return (
-    <ThemeContext.Provider value={{ theme, handleThemeChange }}>
+    <MainContext.Provider value={{ theme, handleThemeChange } as IMainContext}>
       {children}
-    </ThemeContext.Provider>
+    </MainContext.Provider>
   );
 }
 
-export const useChangeTheme = () => useContext(ThemeContext);
+export const useChangeTheme = () => useContext(MainContext);

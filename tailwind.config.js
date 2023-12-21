@@ -24,6 +24,8 @@ export const theme = {
       "light-hero-image-v04": "url('/images/background/light_background_04.jpg')",
     },
 
+
+
     fontFamily: {
       sans: ["var(--font-poppins)", "sans-serif"],
       mono: ["var(--font-plex-mono)", "monospace"]
