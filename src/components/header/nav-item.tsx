@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/utils/utils";
@@ -12,8 +13,8 @@ export const NavItem = ({ href, label }: INavItem) => {
     <Link
       href={href}
       className={cn(
-        "text-black flex items-center font-medium font-sans",
-        isActive && "text-gray-400",
+        "text-black inline items-center font-medium font-sans h-100",
+        isActive && "text-sky-400",
       )}
     >
       {`# ${label}`}

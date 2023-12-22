@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { NavItem } from "./nav-item";
@@ -7,13 +6,15 @@ import { ThemeToogle } from "../themeToggle";
 
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
+  { label: "Sobre", href: "/abaut" },
+  { label: "Habilidade", href: "/skills" },
   { label: "Projetos", href: "/projects" },
 ];
 
 export const Header = () => {
   return (
-    <header className="absolute top-0 w-full z-10 h-24 flex items-center justify-center">
-      <div className=" container flex items-center justify-between px-2">
+    <header className="d-flex flex-row absolute top-0 right-0 w-full z-10 h-24 items-center justify-center shadow glass-effect">
+      <div className="d-flex h-100 items-center justify-between px-2">
         <Link href="/">
           <Image
             width={58}
@@ -23,13 +24,11 @@ export const Header = () => {
             className="cursor-pointer"
           />
         </Link>
-        <nav className="flex items-center gap-2 sm:gap-4 md:gap-10">
+        <nav className="d-felx items-center gap-2 sm:gap-4 md:gap-10 w-100">
           {NAV_ITEMS.map((item) => (
             <NavItem {...item} key={item.label} />
           ))}
         </nav>
-      </div>
-      <div>
         <ThemeToogle />
       </div>
     </header>

@@ -1,3 +1,4 @@
+"use client";
 import { useCallback, useContext, useState } from "react";
 import { MainContext } from "@/context";
 import { IMainContext } from "@/interface/IContext";
@@ -7,7 +8,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   const handleThemeChange = useCallback(
     (theme: string) => {
-      setTheme(theme);
+      return setTheme(theme);
     },
     [setTheme],
   );
