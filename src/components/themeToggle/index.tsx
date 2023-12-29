@@ -1,38 +1,22 @@
-"use client";
-import { useEffect, useState } from "react";
 import { CiLight } from "react-icons/ci";
 import { MdNightlight } from "react-icons/md";
 import { useChangeTheme } from "@/provider";
 import { IMainContext } from "@/interface/IContext";
-// import { cn } from "@/utils/utils";
 
 export const ThemeToogle = () => {
-  const { handleThemeChange } = useChangeTheme() as IMainContext;
-  const [darkMode, setDakMode] = useState("dark");
-
-  useEffect(() => {
-    handleThemeChange(darkMode);
-  }, [handleThemeChange, darkMode]);
-
-  const handleClick = (mode: string) => {
-    if (mode === "dark") {
-      return setDakMode("light");
-    } else {
-      return setDakMode("dark");
-    }
-  };
+  const { theme, setTheme } = useChangeTheme() as IMainContext;
 
   return (
     <div>
       <button
         type="button"
-        onClick={() => handleClick(darkMode)}
-        className="d-flex items-center justify-between bg-white-100"
+        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        className="d-flex items-center justify-between"
       >
-        {darkMode === "dark" ? (
-          <CiLight color="white" size="3rem" />
+        {theme === "dark" ? (
+          <CiLight color="#f0f0f0" size="3rem" />
         ) : (
-          <MdNightlight color="dimgray" size="3rem" />
+          <MdNightlight color="#151515" size="3rem" />
         )}
       </button>
     </div>

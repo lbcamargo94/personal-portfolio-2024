@@ -13,7 +13,7 @@ export const NavItem = ({ href, label }: INavItem) => {
     <Link
       href={href}
       className={cn(
-        "text-black inline items-center font-medium font-sans h-100",
+        "text-primary inline items-center font-medium font-sans h-100",
         isActive && "text-sky-400",
       )}
     >

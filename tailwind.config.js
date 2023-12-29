@@ -24,7 +24,13 @@ export const theme = {
       "light-hero-image-v04": "url('/images/background/light_background_04.jpg')",
     },
 
+    backgroundColor: {
+      primary: "var(--color-bg-primary)"
+    },
 
+    textColor: {
+      primary: "var(--color-text-primary)"
+    },
 
     fontFamily: {
       sans: ["var(--font-poppins)", "sans-serif"],

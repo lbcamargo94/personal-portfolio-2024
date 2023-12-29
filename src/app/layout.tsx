@@ -24,8 +24,8 @@ export const metadata = {
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="pt-BR">
-      <ThemeProvider>
-        <body className={`${poppins.variable} ${plexMono.variable}`}>
+      <ThemeProvider initialTheme={""}>
+        <body className={`${poppins.variable} ${plexMono.variable} bg-primary`}>
           <Header />
           {children}
         </body>
