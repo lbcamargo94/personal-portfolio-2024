@@ -1,28 +1,18 @@
 "use client";
 import Link from "next/link";
-// import { NavItem } from "./navItem";
 import { ThemeToogle } from "../themeToggle/themeToggle";
 import { RiHomeOfficeFill, RiHomeOfficeLine } from "react-icons/ri";
 import { useChangeTheme } from "@/provider/mainProvider";
 import { IMainContext } from "@/interface/IContext";
-// import { SideBar } from "../sideBar/sideBar";
 import Offcanvas from "../offcanvas";
-
-// const NAV_ITEMS = [
-//   { label: "Main", href: "/" },
-//   { label: "Home", href: "/home" },
-//   { label: "Sobre", href: "/about" },
-//   { label: "Habilidade", href: "/skills" },
-//   { label: "Projetos", href: "/projects" },
-// ];
 
 export const Header = () => {
   const { theme } = useChangeTheme() as IMainContext;
 
   return (
-    <header className="flex flex-row items-center justify-between min-w-full shadow bg-primary glass-effect px-3 py-1">
+    <header className="flex flex-row items-center justify-between min-w-full shadow bg-primary glass-effect px-3 py-1 sticky top-0 left-0">
       <div className="flex w-full items-center justify-between">
-        <Link href="/home" className="">
+        <Link href="/" className="">
           {theme === "dark" ? (
             <RiHomeOfficeFill
               color="#f0f0f0"
@@ -38,16 +28,10 @@ export const Header = () => {
           )}
         </Link>
 
-        {/* <SideBar /> */}
-
-        <Offcanvas />
-
-        {/* <nav className="">
-          {NAV_ITEMS.map((item) => (
-            <NavItem {...item} key={item.label} />
-          ))}
-        </nav> */}
-        <ThemeToogle />
+        <div className="flex flex-row items-center align-middle">
+          <Offcanvas />
+          <ThemeToogle />
+        </div>
       </div>
     </header>
   );
