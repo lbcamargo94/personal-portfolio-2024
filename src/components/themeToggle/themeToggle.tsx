@@ -14,9 +14,17 @@ export const ThemeToogle = () => {
         className="d-flex items-center justify-between"
       >
         {theme === "dark" ? (
-          <CiLight color="#f0f0f0" size="2rem" />
+          <CiLight
+            color="#f0f0f0"
+            size="2rem"
+            className="transition duration-300 ease-in-out hover:scale-125"
+          />
         ) : (
-          <MdNightlight color="#151515" size="2rem" />
+          <MdNightlight
+            color="#151515"
+            size="2rem"
+            className="transition duration-300 ease-in-out hover:scale-125"
+          />
         )}
       </button>
     </div>

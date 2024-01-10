@@ -13,78 +13,137 @@
 //   );
 // }
 
-import { Fragment, useState } from "react";
-import { Dialog, Transition } from "@headlessui/react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import { HiMenu, HiX } from "react-icons/hi";
+import { useChangeTheme } from "@/provider/mainProvider";
+import { IMainContext } from "@/interface/IContext";
+import { useState } from "react";
+import { cn } from "@/utils/utils";
 
 export default function Offcanvas() {
-  const [open, setOpen] = useState(true);
+  const { theme } = useChangeTheme() as IMainContext;
+  const [showMenu, setShowMenu] = useState(false);
+
+  const handleCloseMenu = () => {
+    console.log("Fechar Menu", showMenu);
+    setShowMenu(false);
+  };
+  const handleShowMenu = () => {
+    console.log("Abrir Menu", showMenu);
+    setShowMenu(true);
+  };
 
   return (
-    <Transition.Root show={open} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={setOpen}>
-        <Transition.Child
-          as={Fragment}
-          enter="ease-in-out duration-500"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in-out duration-500"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
-        </Transition.Child>
+    <nav className="">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <div className="flex items-center">
+            <div
+              style={{
+                height: "1.5rem",
+                width: "1.5rem",
+              }}
+            ></div>
+            <div className="hidden md:block">
+              <div className="ml-10 flex items-baseline space-x-4">
+                <a
+                  href="#"
+                  className="transition duration-300 ease-in-out hover:scale-125 px-3 py-2 rounded-md text-primary font-medium font-sans h-full"
+                >
+                  Sobre
+                </a>
+                <a
+                  href="#"
+                  className="m-auto transition duration-300 ease-in-out hover:scale-125 px-3 py-2 rounded-md text-primary font-medium font-sans h-full"
+                >
+                  Habilidades
+                </a>
+                <a
+                  href="#"
+                  className="transition duration-300 ease-in-out hover:scale-125 px-3 py-2 rounded-md text-primary font-medium font-sans h-full"
+                >
+                  Projetos
+                </a>
+                <a
+                  href="#"
+                  className="transition duration-300 ease-in-out hover:scale-125 px-3 py-2 rounded-md text-primary font-medium font-sans h-full"
+                >
+                  Contato
+                </a>
+              </div>
+            </div>
+          </div>
 
-        <div className="fixed inset-0 overflow-hidden">
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
-              <Transition.Child
-                as={Fragment}
-                enter="transform transition ease-in-out duration-500 sm:duration-700"
-                enterFrom="translate-x-full"
-                enterTo="translate-x-0"
-                leave="transform transition ease-in-out duration-500 sm:duration-700"
-                leaveFrom="translate-x-0"
-                leaveTo="translate-x-full"
+          <div className={cn("flex md:hidden", showMenu ? "hidden" : "visible")}>
+            <button
+              id="menu-btn"
+              type="button"
+              className="inline-flex items-center justify-center p-2 rounded-md"
+              aria-label="Menu"
+              aria-expanded="false"
+              onClick={handleShowMenu}
+            >
+              {theme === "dark" ? (
+                <HiMenu
+                  color="#f0f0f0"
+                  size="2rem"
+                  className="transition duration-300 ease-in-out hover:scale-125 "
+                />
+              ) : (
+                <HiMenu
+                  color="#151515"
+                  size="2rem"
+                  className="transition duration-300 ease-in-out hover:scale-125"
+                />
+              )}
+            </button>
+          </div>
+
+          <div
+            className={cn(
+              "absolute bg-primary top-0 left-0 h-screen w-60 md:hidden",
+              showMenu ? "visible" : "hidden",
+            )}
+          >
+            <div className="flex justify-between p-3">
+              <h1 className="text-primary bg-primary font-medium font-sans">Menu</h1>
+              <button className="bg-primary" onClick={handleCloseMenu}>
+                <HiX
+                  color="#E74C3C"
+                  size="2rem"
+                  className="transition duration-300 ease-in-out hover:scale-125 "
+                />
+              </button>
+            </div>
+
+            <div className="px-2 pt-2 pd-3 sm:px-3">
+              <a
+                href="#"
+                className="transition duration-300 ease-in-out hover:scale-125 block px-3 py-2 rounded-md text-primary font-medium font-sans"
               >
-                <Dialog.Panel className="pointer-events-auto relative w-screen max-w-md">
-                  <Transition.Child
-                    as={Fragment}
-                    enter="ease-in-out duration-500"
-                    enterFrom="opacity-0"
-                    enterTo="opacity-100"
-                    leave="ease-in-out duration-500"
-                    leaveFrom="opacity-100"
-                    leaveTo="opacity-0"
-                  >
-                    <div className="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4">
-                      <button
-                        type="button"
-                        className="relative rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
-                        onClick={() => setOpen(false)}
-                      >
-                        <span className="absolute -inset-2.5" />
-                        <span className="sr-only">Close panel</span>
-                        <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                      </button>
-                    </div>
-                  </Transition.Child>
-                  <div className="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
-                    <div className="px-4 sm:px-6">
-                      <Dialog.Title className="text-base font-semibold leading-6 text-gray-900">
-                        Panel title
-                      </Dialog.Title>
-                    </div>
-                    <div className="relative mt-6 flex-1 px-4 sm:px-6">
-                      {/* Your content */}
-                    </div>
-                  </div>
-                </Dialog.Panel>
-              </Transition.Child>
+                Sobre
+              </a>
+              <a
+                href="#"
+                className="m-auto transition duration-300 ease-in-out hover:scale-125 block px-3 py-2 rounded-md text-primary font-medium font-sans"
+              >
+                Habilidades
+              </a>
+              <a
+                href="#"
+                className="transition duration-300 ease-in-out hover:scale-125 block px-3 py-2 rounded-md text-primary font-medium font-sans"
+              >
+                Projetos
+              </a>
+              <a
+                href="#"
+                className="transition duration-300 ease-in-out hover:scale-125 block px-3 py-2 rounded-md text-primary font-medium font-sans"
+              >
+                Contato
+              </a>
             </div>
           </div>
         </div>
-      </Dialog>
-    </Transition.Root>
+      </div>
+    </nav>
   );
 }
