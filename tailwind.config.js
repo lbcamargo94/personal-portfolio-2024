@@ -1,23 +1,33 @@
 /** @type {import('tailwindcss').Config} */
+
 export const content = [
   "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
   "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
   "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  "node_modules/preline/dist/*.js",
 ];
+
+export const darkMode = "class";
+
 export const theme = {
-  fontFamily: {
-    sans: ["Poppins", "sans-serif"],
-  },
   extend: {
     backgroundImage: {
-      "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-      "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      "darkheroimage": "url('/images/background/dark_background.jpg')",
+    },
+
+    backgroundColor: {
+      primary: "var(--color-bg-primary)"
+    },
+
+    textColor: {
+      primary: "var(--color-text-primary)"
+    },
+
+    fontFamily: {
+      sans: ["var(--font-poppins)", "sans-serif"],
+      mono: ["var(--font-plex-mono)", "monospace"]
     },
   },
 };
-export const plugins = ["@tailwindcss/typography"];
-export const typography = {
-  family: {
-    sans: ["Poppins", "sans-serif"],
-  },
-};
+
+export const plugins = ["@tailwindcss/typography", "preline/plugin", "@tailwindcss/forms"];
