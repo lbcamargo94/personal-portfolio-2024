@@ -12,11 +12,11 @@ export default function Offcanvas() {
   const [showMenu, setShowMenu] = useState(false);
 
   const NAV_ITEMS = [
-    { label: "Início", href: "/" },
-    { label: "Sobre", href: "/abaut" },
-    { label: "Habilidade", href: "/skills" },
-    { label: "Projetos", href: "/projects" },
-    { label: "Contato", href: "/contact" },
+    { label: "Início", href: "#" },
+    { label: "Sobre", href: "#abaut" },
+    { label: "Habilidade", href: "#skills" },
+    { label: "Projetos", href: "#projects" },
+    { label: "Contato", href: "#contact" },
   ];
 
   const handleCloseMenu = () => {
@@ -29,7 +29,7 @@ export default function Offcanvas() {
   };
 
   return (
-    <nav className="">
+    <nav className="z-50">
       <div className="mx-auto sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">

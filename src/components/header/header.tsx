@@ -10,7 +10,7 @@ export const Header = () => {
   const { theme } = useChangeTheme() as IMainContext;
 
   return (
-    <header className="flex flex-row items-center justify-between min-w-full shadow bg-primary glass-effect px-3 py-1 sticky top-0 left-0">
+    <header className="flex flex-row items-center justify-between min-w-full shadow bg-primary glass-effect px-3 py-1 sticky top-0 left-0 z-50">
       <div className="flex w-full items-center justify-between">
         <Link href="/" className="">
           {theme === "dark" ? (
