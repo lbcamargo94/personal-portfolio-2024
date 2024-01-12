@@ -29,6 +29,7 @@ export function MainProvider({
   children: React.ReactNode;
 }) {
   const [theme, setTheme] = useState(getInitialTheme);
+  const [menu, setMenu] = useState(false);
 
   const handleSetTheme = (handleTheme: string) => {
     const root = window.document.documentElement;
@@ -49,10 +50,10 @@ export function MainProvider({
   }, [theme]);
 
   return (
-    <MainContext.Provider value={{ theme, setTheme } as IMainContext}>
+    <MainContext.Provider value={{ theme, setTheme, menu, setMenu } as IMainContext}>
       {children}
     </MainContext.Provider>
   );
 }
 
-export const useChangeTheme = () => useContext(MainContext);
+export const useMainContext = () => useContext(MainContext);

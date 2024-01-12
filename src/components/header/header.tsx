@@ -1,13 +1,13 @@
 "use client";
 import Link from "next/link";
-import { ThemeToogle } from "../themeToggle/themeToggle";
-import { RiHomeOfficeFill, RiHomeOfficeLine } from "react-icons/ri";
-import { useChangeTheme } from "@/provider/mainProvider";
-import { IMainContext } from "@/interface/IContext";
 import Offcanvas from "../offcanvas";
+import { RiHomeOfficeFill, RiHomeOfficeLine } from "react-icons/ri";
+import { useMainContext } from "@/provider/mainProvider";
+import { IMainContext } from "@/interface/IContext";
+import { ThemeToogle } from "../themeToggle/ThemeToggle";
 
 export const Header = () => {
-  const { theme } = useChangeTheme() as IMainContext;
+  const { theme } = useMainContext() as IMainContext;
 
   return (
     <header className="flex flex-row items-center justify-between min-w-full shadow bg-primary glass-effect px-3 py-1 sticky top-0 left-0 z-50">

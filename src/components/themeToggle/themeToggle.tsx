@@ -1,10 +1,11 @@
+"use client";
 import { CiLight } from "react-icons/ci";
 import { MdNightlight } from "react-icons/md";
-import { useChangeTheme } from "@/provider/mainProvider";
+import { useMainContext } from "@/provider/mainProvider";
 import { IMainContext } from "@/interface/IContext";
 
 export const ThemeToogle = () => {
-  const { theme, setTheme } = useChangeTheme() as IMainContext;
+  const { theme, setTheme } = useMainContext() as IMainContext;
 
   return (
     <div>

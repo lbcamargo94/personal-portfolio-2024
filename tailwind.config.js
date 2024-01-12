@@ -4,7 +4,7 @@ export const content = [
   "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
   "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
   "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  "node_modules/preline/dist/*.js",
+  "node_modules/preline/dist/*.{js,ts,jsx,tsx,mdx}",
 ];
 
 export const darkMode = "class";
@@ -30,4 +30,4 @@ export const theme = {
   },
 };
 
-export const plugins = ["@tailwindcss/typography", "preline/plugin", "@tailwindcss/forms"];
+export const plugins = ["@tailwindcss/typography", "@tailwindcss/forms", "preline/plugin"];

@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 export interface IMainContext {
   theme: string;
-  // eslint-disable-next-line no-unused-vars
+  menu: boolean;
   setTheme: (theme: string) => void;
+  setMenu: (menu: boolean) => void;
 }
