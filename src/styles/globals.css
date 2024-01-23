@@ -1,24 +1,9 @@
-@import 'atropos/css';
-
+/* Configurações do Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+/* Estilos Globais do Body */
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom,
@@ -26,6 +11,7 @@ body {
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
+/* Efeito de Vidro */
 .glass-effect {
   background: rgba(255, 255, 255, 0.075);
   backdrop-filter: blur(13.5px);
@@ -33,11 +19,13 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Modo Escuro */
 .dark {
   --color-bg-primary: #151515;
   --color-text-primary: #f0f0f0;
 }
 
+/* Modo Claro */
 .light {
   --color-bg-primary: #f0f0f0;
   --color-text-primary: #151515;

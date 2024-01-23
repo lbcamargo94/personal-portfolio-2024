@@ -5,7 +5,7 @@ import { IMainContext } from "@/interface/IContext";
 import { useEffect, useState } from "react";
 import { cn } from "@/utils/utils";
 import { GenerateKey } from "@/utils/generateKey";
-import { NavItem } from "../header/NavItem";
+import { NavItem } from "../header/navItem";
 
 export default function Offcanvas() {
   const { theme, menu, setMenu } = useMainContext() as IMainContext;
@@ -21,7 +21,6 @@ export default function Offcanvas() {
     { label: "Habilidade", href: "/skills" },
     { label: "Projetos", href: "/projects" },
     { label: "Contato", href: "/contact" },
-    { label: "Teste", href: "/teste" },
   ];
 
   const handleCloseMenu = () => {

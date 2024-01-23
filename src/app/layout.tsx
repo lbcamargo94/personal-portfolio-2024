@@ -2,7 +2,7 @@ import "../styles/globals.css";
 import { Poppins, IBM_Plex_Mono } from "next/font/google";
 import { ReactNode } from "react";
 import { MainProvider } from "@/provider/mainProvider";
-import { Header } from "@/components/header/Header";
+import { Header } from "@/components/header/header";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -24,7 +24,7 @@ export const metadata = {
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="pt-BR">
-      <MainProvider initialTheme={""}>
+      <MainProvider initialTheme={"default"}>
         <body className={`${poppins.variable} ${plexMono.variable} bg-primary`}>
           <Header />
           {children}
