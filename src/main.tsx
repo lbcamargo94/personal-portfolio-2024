@@ -4,6 +4,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
+import { MainProvider } from "./provider/MainProvider";
 
 // import About from "./pages/About";
 // import Contact from "./pages/Contact";
@@ -18,23 +19,23 @@ const router = createBrowserRouter([
     // children: [
     //   {
     //     path: "/",
-    //     element: <Home />,
+    //     element: <Home id="home" />,
     //   },
     //   {
     //     path: "/about",
-    //     element: <About />,
+    //     element: <About id="about" />,
     //   },
     //   {
     //     path: "/skills",
-    //     element: <Skills />,
+    //     element: <Skills id="skills" />,
     //   },
     //   {
     //     path: "/projects",
-    //     element: <Projects />,
+    //     element: <Projects id="projects" />,
     //   },
     //   {
     //     path: "/contact",
-    //     element: <Contact />,
+    //     element: <Contact id="contact" />,
     //   },
     // ],
   },
@@ -42,6 +43,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <MainProvider>
+      <RouterProvider router={router} />
+    </MainProvider>
   </React.StrictMode>
 );

@@ -3,11 +3,11 @@ import NavBar from "../NavBar";
 
 export default function Header() {
   const NAV_ITEMS = [
-    { label: "Início", href: "/" },
-    { label: "Sobre", href: "/about" },
-    { label: "Habilidade", href: "/skills" },
-    { label: "Projetos", href: "/projects" },
-    { label: "Contato", href: "/contact" },
+    { label: "Início", href: "home", active: true },
+    { label: "Sobre", href: "about", active: true },
+    { label: "Habilidade", href: "skills", active: true },
+    { label: "Projetos", href: "projects" },
+    { label: "Contato", href: "contact" },
   ] as INavItem[];
 
   return (
