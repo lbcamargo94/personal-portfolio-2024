@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+  font-weight: 300;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+/* Efeito de Vidro */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.075);
+  backdrop-filter: blur(13.5px);
+  -webkit-backdrop-filter: blur(13.5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Modo Escuro */
+.dark {
+  --color-bg-primary: #151515;
+  --color-text-primary: #f0f0f0;
+  -webkit-box-shadow: 10px 15px 20px -10px #f0f0f0;
+  -moz-box-shadow: 10px 15px 20px -10px #f0f0f0;
+  box-shadow: 10px 15px 20px -10px #f0f0f0;
+
+}
+
+/* Modo Claro */
+.light {
+  --color-bg-primary: #f0f0f0;
+  --color-text-primary: #151515;
+  -webkit-box-shadow: 10px 15px 20px -10px #151515;
+  -moz-box-shadow: 10px 15px 20px -10px #151515;
+  box-shadow: 10px 15px 20px -10px #151515;
+}

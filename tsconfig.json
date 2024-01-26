@@ -5,7 +5,6 @@
     "skipLibCheck": true,
     "target": "ES2020",
     "useDefineForClassFields": true,
-
     /* Bundler mode */
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
@@ -13,19 +12,21 @@
     "moduleResolution": "bundler",
     "noEmit": true,
     "resolveJsonModule": true,
-
     /* Linting */
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "strict": true,
-
     /* Paths */
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["./src/*"]
     }
   },
   "exclude": ["node_modules"],
-  "include": ["src","**/*.js", "**/*.jsx","**/*.ts", "**/*.tsx",],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src", "**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }
