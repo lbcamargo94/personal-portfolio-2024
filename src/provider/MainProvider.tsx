@@ -29,6 +29,7 @@ export const MainProvider = ({
 }) => {
   const [navName, setNavName] = useState<string>("default");
   const [theme, setTheme] = useState<string>(getInitialTheme);
+  const [menu, setMenu] = useState(false);
 
   const handleSetTheme = (newTheme: string) => {
     const root = document.documentElement;
@@ -58,6 +59,8 @@ export const MainProvider = ({
         setNavName,
         theme,
         setTheme,
+        menu,
+        setMenu,
       }}
     >
       {children}

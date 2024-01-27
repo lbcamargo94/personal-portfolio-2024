@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
 
 export default function NavBar({ href, label }: INavItem) {
-  const { navName, setNavName } = useMainContext() as IMainContext;
+  const { navName, setNavName, setMenu } = useMainContext() as IMainContext;
 
   const [activeNav, setActiveNav] = useState<string>("");
 
@@ -15,6 +15,10 @@ export default function NavBar({ href, label }: INavItem) {
   }, [navName]);
 
   const isActive = label === activeNav;
+
+  const handleCloseMenu = () => {
+    setMenu(false);
+  };
 
   return (
     <div>
@@ -28,7 +32,10 @@ export default function NavBar({ href, label }: INavItem) {
         duration={1500}
         delay={50}
         offset={-100}
-        onClick={() => setNavName(label)}
+        onClick={() => {
+          setNavName(label);
+          handleCloseMenu();
+        }}
       >
         {label}
       </ScrollLink>
