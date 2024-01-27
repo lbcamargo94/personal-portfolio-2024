@@ -18,7 +18,7 @@ export default function App() {
         <About id={"about"} />
         <Skills id={"skills"} />
         <Projects id={"projects"} />
-        <Contact id={"projects"} />
+        <Contact id={"contact"} />
         <Footer />
       </SmoothScroll>
     </div>

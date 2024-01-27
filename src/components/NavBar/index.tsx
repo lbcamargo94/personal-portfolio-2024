@@ -1,9 +1,20 @@
+import { useMainContext } from "@/hooks/UseMainContext";
+import { IMainContext } from "@/interfaces/ContextApi/IMainContext";
 import { INavItem } from "@/interfaces/NavBar/INavBar";
 import { cn } from "@/utils/DynamicClassName";
+import { useEffect, useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
 
-export default function NavBar({ href, label, active }: INavItem) {
-  const isActive = active;
+export default function NavBar({ href, label }: INavItem) {
+  const { navName, setNavName } = useMainContext() as IMainContext;
+
+  const [activeNav, setActiveNav] = useState<string>("");
+
+  useEffect(() => {
+    setActiveNav(navName);
+  }, [navName]);
+
+  const isActive = label === activeNav;
 
   return (
     <div>
@@ -14,7 +25,10 @@ export default function NavBar({ href, label, active }: INavItem) {
         )}
         to={href}
         smooth={true}
-        duration={1000}
+        duration={1500}
+        delay={50}
+        offset={-100}
+        onClick={() => setNavName(label)}
       >
         {label}
       </ScrollLink>

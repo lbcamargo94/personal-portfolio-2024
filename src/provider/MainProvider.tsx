@@ -1,14 +1,63 @@
 import { MainContext } from "@/context/MainContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export const MainProvider = ({ children }: { children: React.ReactNode }) => {
-  const [navName, setNavName] = useState<string>("");
+function getInitialTheme() {
+  if (typeof window !== "undefined" && window.localStorage) {
+    const themeStorage = window.localStorage.getItem("theme");
+
+    if (typeof themeStorage === "string") {
+      return themeStorage;
+    }
+
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      return "dark";
+    }
+  }
+
+  return "light";
+}
+
+export const MainProvider = ({
+  children,
+  initialTheme,
+}: {
+  children: React.ReactNode;
+  initialTheme: string;
+}) => {
+  const [navName, setNavName] = useState<string>("default");
+  const [theme, setTheme] = useState<string>(getInitialTheme);
+
+  const handleSetTheme = (newTheme: string) => {
+    const root = document.documentElement;
+
+    root.classList.remove("light", "dark");
+    root.classList.add(newTheme);
+
+    localStorage.setItem("theme", newTheme);
+  };
+
+  // Aplicar tema inicial se fornecido
+  useEffect(() => {
+    if (initialTheme) {
+      handleSetTheme(initialTheme);
+    }
+  }, [initialTheme]);
+
+  // Atualizar o tema quando a variável 'theme' muda
+  useEffect(() => {
+    handleSetTheme(theme);
+  }, [theme]);
 
   return (
     <MainContext.Provider
       value={{
         navName,
         setNavName,
+        theme,
+        setTheme,
       }}
     >
       {children}

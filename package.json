@@ -16,10 +16,12 @@
     "update:all": "npm outdated & npm update & npx npm-check-updates -u & npm install"
   },
   "dependencies": {
+    "@preline/overlay": "^2.0.2",
     "@studio-freight/react-lenis": "^0.0.43",
     "atropos": "^2.0.2",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.3",
+    "preline": "^2.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
