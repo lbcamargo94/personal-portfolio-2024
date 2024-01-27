@@ -24,7 +24,7 @@ export default function NavBar({ href, label }: INavItem) {
     <div>
       <ScrollLink
         className={cn(
-          "transition duration-300 ease-in-out rounded-md text-primary font-medium font-sans hover:font-bold hover:scale-90",
+          "transition duration-300 ease-in-out rounded-md text-primary font-medium font-sans cursor-pointer hover:font-bold hover:scale-90",
           isActive && "text-sky-400 text-xl"
         )}
         to={href}

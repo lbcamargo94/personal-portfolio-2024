@@ -7,7 +7,7 @@ export const ThemeToogle = () => {
   const { theme, setTheme } = useMainContext() as IMainContext;
 
   return (
-    <div>
+    <div id="theme-toogle">
       <button
         type="button"
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}

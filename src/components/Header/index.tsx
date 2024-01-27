@@ -6,6 +6,8 @@ import LogoDark from "@/assets/icons/LC_Dark_Portifólio.svg";
 import LogoLight from "@/assets/icons/LC_Light_Portifólio.svg";
 import Offcanvas from "../Offcanvas";
 
+import "@/styles/animations.scss";
+
 export default function Header() {
   const { theme } = useMainContext() as IMainContext;
 
@@ -20,20 +22,20 @@ export default function Header() {
           offset={-100}
         >
           {theme === "dark" ? (
-            <div className="h-full w-12">
+            <div className="h-full w-12 rounded-full cursor-pointer hover:shadow-primary slide-in">
               <img
                 src={LogoLight}
                 alt="LogoDark"
-                className="object-cover"
+                className="object-cover hover:scale-110"
                 sizes="2rem"
               />
             </div>
           ) : (
-            <div className="h-full w-12">
+            <div className="h-full w-12 rounded-full cursor-pointer hover:shadow-primary slide-in">
               <img
                 src={LogoDark}
                 alt="LogoDark"
-                className="object-cover"
+                className="object-cover hover:scale-110"
                 sizes="2rem"
               />
             </div>
