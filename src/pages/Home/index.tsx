@@ -11,7 +11,7 @@ export default function Home({ id }: { id: string }) {
   return (
     <div
       id={id}
-      className="flex py-10 min-h-screen max-w-4xl flex-col items-center justify-center font-sans bg-primary text-primary"
+      className="flex pt-10 min-h-screen max-w-4xl flex-col items-center justify-center font-sans bg-primary text-primary"
     >
       <div className="flex flex-row justify-between items-center align-middle hover:cursor-default">
         <div className="w-64 h-64 mx-20 ">
@@ -19,7 +19,7 @@ export default function Home({ id }: { id: string }) {
             Olá, eu sou o Lucas👋🏽
           </h1>
 
-          <p className="text-primary shadow-primary rounded p-3 my-12 text-balance text-center transition duration-300 ease-in-out hover:scale-110">
+          <p className="text-primary  rounded p-3 my-12 text-balance text-center transition duration-300 ease-in-out hover:scale-110 hover:shadow-primary">
             "Inovação em Cada Byte: Onde a Habilidade se Encontra com a
             Tecnologia, Criando Software que Inspira."
           </p>
@@ -33,7 +33,7 @@ export default function Home({ id }: { id: string }) {
         </div>
       </div>
 
-      <div className="bg-sky-500 hover:scale-110 w-52 mt-20 rounded shadow-primary transition duration-300 ease-in-out  hover:bg-primary">
+      <div className="bg-sky-500 hover:scale-110 w-52 mt-20 rounded hover:shadow-primary transition duration-300 ease-in-out  hover:bg-primary">
         <ScrollLink
           to={"contact"}
           smooth={true}
