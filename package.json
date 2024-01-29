@@ -16,21 +16,29 @@
     "update:all": "npm outdated & npm update & npx npm-check-updates -u & npm install"
   },
   "dependencies": {
+    "@preline/overlay": "^2.0.2",
     "@studio-freight/react-lenis": "^0.0.43",
     "atropos": "^2.0.2",
+    "canvas-confetti": "^1.9.2",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.3",
+    "preline": "^2.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
     "react-router-dom": "^6.21.3",
+    "react-scroll": "^1.9.0",
+    "react-spring": "^9.7.3",
     "sass": "^1.70.0",
     "sort-by": "^0.0.2",
-    "tailwind-merge": "^2.2.1"
+    "tailwind-merge": "^2.2.1",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
+    "@types/react-scroll": "^1.8.10",
+    "@types/uuid": "^9.0.8",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
     "@vitejs/plugin-react": "^4.2.1",

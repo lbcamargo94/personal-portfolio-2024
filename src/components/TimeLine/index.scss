@@ -1,0 +1,27 @@
+@tailwind components;
+
+@layer components {
+  .group-date {
+    @apply text-4xl px-3 py-4 font-bold tracking-widest
+  }
+
+  .timeline {
+    @apply border-l-2 border-gray-400 ml-3 mt-3 py-16 space-y-14
+  }
+
+  .dot {
+    @apply absolute top-5 -left-3.5 bg-blue-400 h-6 w-6 rounded-full border-2 border-gray-400
+  }
+
+  .timeline-date {
+    @apply text-xs font-bold opacity-40 tracking-widest
+  }
+
+  .timeline-title {
+    @apply text-3xl
+  }
+
+  .box-container {
+    @apply flex max-w-2xl flex-col justify-start font-sans bg-primary text-primary
+  }
+}

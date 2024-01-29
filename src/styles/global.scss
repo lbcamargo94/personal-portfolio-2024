@@ -25,9 +25,7 @@
 .dark {
   --color-bg-primary: #151515;
   --color-text-primary: #f0f0f0;
-  -webkit-box-shadow: 10px 15px 20px -10px #f0f0f0;
-  -moz-box-shadow: 10px 15px 20px -10px #f0f0f0;
-  box-shadow: 10px 15px 20px -10px #f0f0f0;
+  --color-shadow-primary: 0px 1px 15px 0px #f0f0f0;
 
 }
 
@@ -35,7 +33,5 @@
 .light {
   --color-bg-primary: #f0f0f0;
   --color-text-primary: #151515;
-  -webkit-box-shadow: 10px 15px 20px -10px #151515;
-  -moz-box-shadow: 10px 15px 20px -10px #151515;
-  box-shadow: 10px 15px 20px -10px #151515;
+  --color-shadow-primary: 0px 1px 15px 0px #151515;
 }
