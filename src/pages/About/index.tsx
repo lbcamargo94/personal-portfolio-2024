@@ -1,14 +1,55 @@
+import TimeLine from "@/components/TimeLine";
+import { ITimeEvent } from "@/interfaces/TimeLine/ITimeLine";
+
 export default function About({ id }: { id: string }) {
+  const TimeLineEvents = [
+    {
+      date: "2022-01-01",
+      title: "Projeto X",
+      description: "Descrição do Projeto X...",
+    },
+    {
+      date: "2021-10-15",
+      title: "Trabalho Freelance",
+      description: "Descrição do Trabalho Freelance...",
+    },
+    // Adicione mais eventos conforme necessário
+  ];
+
   return (
     <div
       id={id}
-      className="flex py-10 min-h-screen flex-col items-center justify-start font-sans bg-primary text-primary"
+      className="flex py-10 min-h-screen max-w-4xl flex-col items-center justify-evenly font-sans bg-primary text-primary"
     >
-      <h2>About</h2>
-      <div className="bg-red-500 w-20 h-20">red</div>
-      <div className="bg-green-500 w-20 h-20">green</div>
-      <div className="bg-blue-500 w-20 h-20">blue</div>
-      <div className="bg-yellow-500 w-20 h-20">yellow</div>
+      <div className="felx h-full max-w-2xl">
+        <h1 className="text-primary text-4xl w-full text-balance text-center">
+          Sobre Min
+        </h1>
+      </div>
+
+      <div className="felx h-full max-w-2xl">
+        <p className="text-primary mt-12 w-full items-center align-middle">
+          Sou Lucas Camargo, e considero uma honra compartilhar minha
+          experiência e competências com você. <br />
+          <br />
+          Sou apaixonado por tecnologias e tenho um carinho especial por
+          programação e desenvolvimento web. <br />
+          <br />
+          Venho trabalhando com programação desde de 2021, com frontend e
+          backend e sempre estudando para me manter atualizado. <br />
+          <br />
+          Atualmente trabalho em uma empresa desenvolvendo um grande sistema,
+          junto de uma equipe de desenvolvedores sensacional! <br />
+          <br />
+          Meu foco atual é desenvolver aplicações web, sites responsivos,
+          interfaces grficas com a melhor experiência para os usuários e muito
+          mais.
+        </p>
+      </div>
+
+      <div className="inline-block">
+        <TimeLine timeEvent={TimeLineEvents} />
+      </div>
     </div>
   );
 }
