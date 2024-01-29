@@ -33,7 +33,7 @@ export default function Home({ id }: { id: string }) {
         </div>
       </div>
 
-      <div className="bg-sky-500 hover:scale-110 w-52 mt-20 rounded shadow-primary hover:bg-primary">
+      <div className="bg-sky-500 hover:scale-110 w-52 mt-20 rounded shadow-primary transition duration-300 ease-in-out  hover:bg-primary">
         <ScrollLink
           to={"contact"}
           smooth={true}

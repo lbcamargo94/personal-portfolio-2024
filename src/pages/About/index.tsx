@@ -1,21 +1,8 @@
-import TimeLine from "@/components/TimeLine";
-import { ITimeEvent } from "@/interfaces/TimeLine/ITimeLine";
+import TesteTimeLine from "@/components/TimeLine";
+import TimelineData from "@/data/events/envents";
+import { v4 as uuidv4 } from "uuid";
 
 export default function About({ id }: { id: string }) {
-  const TimeLineEvents = [
-    {
-      date: "2022-01-01",
-      title: "Projeto X",
-      description: "Descrição do Projeto X...",
-    },
-    {
-      date: "2021-10-15",
-      title: "Trabalho Freelance",
-      description: "Descrição do Trabalho Freelance...",
-    },
-    // Adicione mais eventos conforme necessário
-  ];
-
   return (
     <div
       id={id}
@@ -46,9 +33,10 @@ export default function About({ id }: { id: string }) {
           mais.
         </p>
       </div>
-
-      <div className="inline-block">
-        <TimeLine timeEvent={TimeLineEvents} />
+      <div className="py-24">
+        {TimelineData.reverse().map((event) => (
+          <TesteTimeLine {...event} key={uuidv4()} />
+        ))}
       </div>
     </div>
   );
