@@ -2,23 +2,23 @@
 
 @layer components {
   .group-date {
-    @apply text-4xl px-3 py-4 font-bold tracking-widest
+    @apply px-3 py-2 font-bold text-2xl tracking-widest
   }
 
   .timeline {
-    @apply border-l-2 border-gray-400 ml-3 mt-3 py-16 space-y-14
+    @apply border-l-2 border-gray-400 ml-3 mt-3 py-6 space-y-7
   }
 
   .dot {
-    @apply absolute top-5 -left-3.5 bg-blue-400 h-6 w-6 rounded-full border-2 border-gray-400
+    @apply absolute top-5 -left-3 bg-blue-400 h-5 w-5 rounded-full border-2 border-gray-400
   }
 
   .timeline-date {
-    @apply text-xs font-bold opacity-40 tracking-widest
+    @apply text-base font-bold opacity-60 tracking-widest text-sky-500
   }
 
   .timeline-title {
-    @apply text-3xl
+    @apply text-2xl
   }
 
   .box-container {

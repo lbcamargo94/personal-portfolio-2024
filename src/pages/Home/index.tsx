@@ -11,32 +11,33 @@ export default function Home({ id }: { id: string }) {
   return (
     <div
       id={id}
-      className="flex pt-10 min-h-screen max-w-4xl flex-col items-center justify-center font-sans bg-primary text-primary"
+      className="flex pt-6 min-h-screen max-w-4xl flex-col items-center justify-center font-sans bg-primary text-primary"
     >
-      <div className="flex flex-row justify-between items-center align-middle hover:cursor-default">
-        <div className="w-64 h-64 mx-20 ">
+      <div className="flex flex-col justify-between items-center align-middle hover:cursor-default sm:flex-row">
+        <div className="w-64 h-64 flex flex-col">
           <h2 className="text-primary text-4xl transition duration-300 ease-in-out hover:scale-110">
             Olá👋🏽, eu sou
-            <span data-text="">Lucas</span>
-            <span data-text="">Desenvolvedor Frontend</span>
-            <span data-text="">Desenvolvedor Backend</span>
+            <span>
+              <br />
+              Lucas
+            </span>
           </h2>
 
-          <p className="text-primary  rounded p-3 my-12 text-balance text-center transition duration-300 ease-in-out hover:scale-110 hover:shadow-primary">
+          <p className="text-primary  rounded p-3 my-6 text-balance text-center transition duration-300 ease-in-out hover:scale-110 hover:shadow-primary">
             "Inovação em Cada Byte: Onde a Habilidade se Encontra com a
             Tecnologia, Criando Software que Inspira."
           </p>
         </div>
 
         <div
-          className="w-64 h-64 rounded-full hover:shadow-primary
+          className="w-64 h-64 my-20 rounded-full hover:shadow-primary
       m-6 overflow-clip transition duration-300 ease-in-out hover:scale-110"
         >
           <img src={MyAvatar} alt="MyAvatar" className="rounded-full" />
         </div>
       </div>
 
-      <div className="bg-sky-500 hover:scale-110 w-52 mt-20 rounded hover:shadow-primary transition duration-300 ease-in-out  hover:bg-primary">
+      <div className="bg-sky-500 hover:scale-110 w-52 mt-6 rounded hover:shadow-primary transition duration-300 ease-in-out  hover:bg-primary">
         <ScrollLink
           to={"contact"}
           smooth={true}

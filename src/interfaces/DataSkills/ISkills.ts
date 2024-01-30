@@ -4,5 +4,5 @@ export interface IDataSkill {
     alt: string;
   };
   skill: string;
-  rate: string;
+  rate: number;
 }
