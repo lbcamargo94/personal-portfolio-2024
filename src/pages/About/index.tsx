@@ -34,9 +34,9 @@ export default function About({ id }: { id: string }) {
         </p>
       </div>
       <div className="py-24">
-        {TimelineData.reverse().map((event) => (
+        {TimelineData.map((event) => (
           <TesteTimeLine {...event} key={uuidv4()} />
-        ))}
+        )).reverse()}
       </div>
     </div>
   );

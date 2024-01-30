@@ -1,5 +1,3 @@
-import TesteTimeLine from "@/components/TimeLine";
-
 export default function Projects({ id }: { id: string }) {
   return (
     <div
@@ -11,10 +9,6 @@ export default function Projects({ id }: { id: string }) {
       <div className="bg-green-500 w-20 h-20">green</div>
       <div className="bg-blue-500 w-20 h-20">blue</div>
       <div className="bg-yellow-500 w-20 h-20">yellow</div>
-
-      <div>
-        <TesteTimeLine />
-      </div>
     </div>
   );
 }

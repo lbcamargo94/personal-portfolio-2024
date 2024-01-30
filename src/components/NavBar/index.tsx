@@ -8,7 +8,7 @@ import { Link as ScrollLink } from "react-scroll";
 export default function NavBar({ href, label }: INavItem) {
   const { navName, setNavName, setMenu } = useMainContext() as IMainContext;
 
-  const [activeNav, setActiveNav] = useState<string>("");
+  const [activeNav, setActiveNav] = useState<string>("Inicio");
 
   useEffect(() => {
     setActiveNav(navName);

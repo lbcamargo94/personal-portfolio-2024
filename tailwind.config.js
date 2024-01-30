@@ -10,6 +10,10 @@ export const darkMode = "class";
 
 export const theme = {
   extend: {
+    gridTemplateColumns: {
+      skills: "repeat(2, 1fr) 2fr"
+    },
+
     backgroundColor: {
       primary: "var(--color-bg-primary)"
     },
