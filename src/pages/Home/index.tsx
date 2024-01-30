@@ -15,9 +15,12 @@ export default function Home({ id }: { id: string }) {
     >
       <div className="flex flex-row justify-between items-center align-middle hover:cursor-default">
         <div className="w-64 h-64 mx-20 ">
-          <h1 className="text-primary text-4xl transition duration-300 ease-in-out hover:scale-110">
-            Olá, eu sou o Lucas👋🏽
-          </h1>
+          <h2 className="text-primary text-4xl transition duration-300 ease-in-out hover:scale-110">
+            Olá👋🏽, eu sou
+            <span data-text="">Lucas</span>
+            <span data-text="">Desenvolvedor Frontend</span>
+            <span data-text="">Desenvolvedor Backend</span>
+          </h2>
 
           <p className="text-primary  rounded p-3 my-12 text-balance text-center transition duration-300 ease-in-out hover:scale-110 hover:shadow-primary">
             "Inovação em Cada Byte: Onde a Habilidade se Encontra com a
